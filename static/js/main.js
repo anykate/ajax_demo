@@ -23,7 +23,27 @@ $(document).ready(function () {
         );
       },
       error: function (e) {
-        console.error("Error receiving response ", e.statusText);
+        console.error("GET Error receiving response ", e.statusText);
+      },
+    });
+  });
+
+  $("#seconds").on("click", "li", function (e) {
+    e.preventDefault();
+    $.ajax({
+      url: "",
+      type: "POST",
+      data: {
+        li_text: $(this).text(),
+        csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
+      },
+      success: function (response) {
+        $("#right").append(
+          '<li class="list-group-item">' + response.response_text + "</li>"
+        );
+      },
+      error: function (e) {
+        console.error("POST Error receiving response ", e.statusText);
       },
     });
   });

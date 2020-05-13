@@ -12,3 +12,9 @@ class AjaxHandlerView(View):
         if request.is_ajax():
             return JsonResponse({'response_text': str(t)}, status=200)
         return render(request, 'app/index.html')
+
+    def post(self, request):
+        text = request.POST.get('li_text')
+        response_text = f"I've got {text}"
+        if request.is_ajax():
+            return JsonResponse({'response_text': response_text}, status=200)
