@@ -22,6 +22,9 @@ $(document).ready(function () {
           '<li class="list-group-item">' + response.response_text + "</li>"
         );
       },
+      error: function (e) {
+        console.error("Error receiving response ", e.statusText);
+      },
     });
   });
 });
