@@ -31,7 +31,17 @@
 </head>
 
 <body>
-	{% block content %}{% endblock %}
+	<div class="container">
+		<h1 class="text-center">App</h1>
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-6 text-center mt-5">
+				{% block left-column %}{% endblock %}
+			</div>
+			<div class="col-12 col-md-6 text-center mt-5">
+				{% block right-column %}{% endblock %}
+			</div>
+		</div>
+	</div>
 
 
 	<!-- Link to Materialize JS file -->

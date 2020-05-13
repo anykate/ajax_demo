@@ -3,8 +3,11 @@
 
 {% block title %}App - Home{% endblock %}
 
-{% block content %}
-    <div class="container">
-        <h1>App</h1>
-    </div>
+{% block left-column %}
+	<button type="button" class="btn btn-success btn-lg mb-4">GET</button>
+	<ul id="seconds" class="list-group"></ul>
+{% endblock %}
+
+{% block right-column %}
+	<ul id="right" class="list-group"></ul>
 {% endblock %}
